@@ -1,0 +1,112 @@
+"   __  ___      _   ___     "
+"  /  |/  /_ __ | | / (_)_ _ "
+" / /|_/ / // / | |/ / /  ' \"
+"/_/  /_/\_, /__|___/_/_/_/_/"
+"       /___/___/            "
+
+set nocompatible
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/myVle_config')
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+call vundle#end()
+filetype plugin indent on
+
+syntax enable
+syntax on
+
+let mapleader=' '
+let &t_ut=''
+set encoding=utf-8
+
+set number
+set relativenumber
+set cursorline
+set showcmd
+set wildmenu
+" set wildmode=list:longest
+
+set formatoptions=tcrqn
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set scrolloff=8
+set showmatch
+
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
+
+colorscheme murphy
+
+" inoremap ( ()<ESC>i
+" inoremap [ []<ESC>i
+" inoremap { {}<ESC>i
+" inoremap < <><ESC>i
+
+noremap <LEADER><CR> :nohlsearch<CR>
+noremap <LEADER>/ :r !figlet -f smslant
+" noremap 按键映射改变 before become last
+map s <nop>
+map S <nop>
+" mqp Q :q<CR>
+map <LEADER>r :source $MYVIMRC<CR> 
+map s :w<CR>
+map <LEADER>q :q!<CR>
+
+map <LEADER>l :set splitright<CR>:vsplit<CR>
+map <LEADER>h :set nosplitright<CR>:vsplit<CR>
+map <LEADER>k :set nosplitbelow<CR>:split<CR>
+map <LEADER>j :set splitbelow<CR>:split<CR>
+
+map S :tabe<CR>
+map - :-tabnext<CR>
+map = :+tabnext<CR>
+
+map <LEADER><up> :res +5<CR>
+map <LEADER><down> :res -5<CR>
+map <LEADER><left> :vertical resize-5<CR>
+map <LEADER><right> :vertical resize+5<CR>
+
+"The Configuration of air_line
+let g:airline_theme='wombat'
+" for youcompeteme
+	" let g:ycm_global_ycm_extra_conf = '~/.vim/myVle_config/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+	" let g:ycm_add_preview_to_completeopt = 0
+	" let g:ycm_show_diagnostics_ui = 0
+	" let g:ycm_server_log_level = 'info'
+	" let g:ycm_min_num_identifier_candidate_chars = 2
+	" let g:ycm_collect_identifiers_from_comments_and_strings = 1
+	" let g:ycm_complete_in_strings=1
+	" let g:ycm_key_invoke_completion = '<c-z>'
+	" highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
+	" highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
+	" set completeopt=menu,menuone
+	" 
+	" noremap <c-z> <NOP>
+	" 
+	" let g:ycm_semantic_triggers =  {
+            	" \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+            	" \ 'cs,lua,javascript': ['re!\w{2}'],
+            	" \ }
+	" 
+	" let g:ycm_filetype_whitelist = { 
+            	" \ "c":1,
+            	" \ "cpp":1, 
+            	" \ "objc":1,
+            	" \ "sh":1,
+            	" \ "zsh":1,
+            	" \ "zimbu":1,
+            	" \ }            
+	" let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+	" 
+	" let g:ycm_confirm_extra_conf = 0
